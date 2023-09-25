@@ -6,9 +6,8 @@ trap "echo '******* Caught SIGINT signal. Stopping...'; exit 2" SIGINT
 
 echo "Setting up..."
 
-dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf install ffmpeg nodejs.x86_64 unzip wget -y
+apt update
+apt install ffmpeg nodejs unzip wget npm -y
 npm -g install http-server
 mkdir -p /opt
 cd /opt
@@ -19,5 +18,7 @@ cd jsmpeg-master
 mv view-stream.html index.html
 mv /assets/favicon.ico .
 npm install ws
+
+ENV RESOLUTION=640x480
 
 echo "Done."
