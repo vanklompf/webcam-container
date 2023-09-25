@@ -1,5 +1,4 @@
-FROM fedora:latest
-MAINTAINER Roman Kravtsov
+FROM ubuntu:22.04
 
 COPY assets /assets
 
