@@ -19,6 +19,4 @@ mv view-stream.html index.html
 mv /assets/favicon.ico .
 npm install ws
 
-ENV RESOLUTION=640x480
-
 echo "Done."
