@@ -3,6 +3,7 @@ FROM node:alpine
 COPY assets /assets
 
 RUN apk add ffmpeg
+RUN npm -g install http-server
 RUN /assets/setup.sh
 RUN cd /opt/jsmpeg-master && npm install ws
 
